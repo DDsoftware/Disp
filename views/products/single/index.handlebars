@@ -1,0 +1,26 @@
+<header class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <center><h1>{{product.productName}}</h1></center>
+          <hr class="small">
+          <span class="subheading">Owner: {{product.username}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div style="height: 300px; width: 600px; border: 1px solid black">
+        <div style="height: 250px; width: 300px; border: 1px solid black">
+        <img src= {{product.productPhotos}}></div>
+        <h4>{{product.productPrice}} </br>
+        {{product.productDescription}}</h4>
+      </div>
+    </div>
+  </div>
+</div>

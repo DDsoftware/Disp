@@ -1,0 +1,37 @@
+<header class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <center><h1>Products</h1></center>
+          <hr class="small">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        {{#if cur_user}}
+        <div class="create-post">
+          <a class="btn btn-default" href="/products/new">Add a new product</a>
+        </div> 
+        {{/if}} </br></br>
+        {{#each product}}
+          <div class="post-preview">
+            <div style="height: 150px; width: 200px; border: 1px solid black"></div>
+              <a href="/products/{{this.username}}/{{this.slug}}">
+                  <h2 class="post-title">
+                      {{this.productName}} </br>
+                      {{this.productPrice}}
+                  </h2>
+              </a>
+              <p class="post-meta">Owner: <a href="/users/{{this.username}}">{{this.username}}</a></p>
+          </div>
+          <hr>
+        {{/each}}
+      </div>
+  </div>
+</div>

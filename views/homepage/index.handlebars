@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      {{#if cur_user}}
+        <center><h1>Hey <span style="color: red;">{{cur_user.username}}</span></h1></center> </br></br>
+        <div style="float:left; padding-left: 20px; width: 40%; background-color:#D3D3D3">
+          <center><h2>Profile Information</h2></center>
+          <hr class="small">
+          <h3>Username: <span style="color: red;">{{cur_user.username}}</span></h3>
+          <h3>FirstName: <span style="color: red;">{{cur_user.firstName}}</span></h3>
+          <h3>LastName: <span style="color: red;">{{cur_user.lastName}}</span></h3>
+          <h3>Email: <span style="color: blue;">{{cur_user.email}}</span></h3> </br></br>
+          <center><button type="submit" class="btn btn-primary">Edit user</button></center>
+        </div>
+        <div>
+          <a class="btn btn-default" href="/products">Search products</a>
+        </div>
+
+        <div>
+          <a class="btn btn-default" href="/products/new">Register a new product</a>
+        </div>
+
+      {{else}}
+        <div>
+          <center><h1>Welcome</h1></center>
+
+          <a class="btn btn-default" href="/products">Search products</a>
+        </div> </br>
+       
+      {{/if}}
+    </div>
+  </div>
+</div>
