@@ -1,25 +1,41 @@
-{{#each success}}
-  <div class="alert alert-danger">{{this}}</div>
-{{/each}}
-
-<header class="intro-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>{{user.username}}</h1>
-          <hr class="small">
-          <span class="subheading">{{user.firstName}} {{user.lastName}}</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <p></p>
+    <div class="col-sm-12">
+        <center><h4>Recommended for: <span style="color: red;">{{cur_user.username}}</span></h4></center> 
+        <div style="float:left; padding-left: 20px; width: 25%; background-color:#D3D3D3">
+          <center><h2>Profile Information</h2></center>
+          <hr class="small">
+          <h4>Username: <span style="color: red;">{{cur_user.username}}</span></h4>
+          <h4>FirstName: <span style="color: blue;">{{cur_user.firstName}}</span></h4>
+          <h4>LastName: <span style="color: blue;">{{cur_user.lastName}}</span></h4>
+          <h5>Email: <span style="color: blue;">{{cur_user.email}}</span></h5> 
+          <h4>Phone: <span style="color: blue;">{{cur_user.phone}}</span></h4> </br>
+          <center><h2>Account Info:</h2></center>
+          <h4>Acc#: <span style="color: blue;">{{cur_user.cardNumber}}</span></h4> 
+          <h4>Balance: <span style="color: blue;">{{cur_user.balance}}</span></h4> </br>
+          
+          <center><a class="btn" style="color: green;" href="/profile/edit">Edit Profile</a></center>
+        </div>
+          {{cur_product.productName}}
+
+        <div style="float:right; padding-left: 20px; width: 25%; background-color:#D3D3D3">
+          </br>
+          <div>
+            <a class="btn btn-default" href="/products">Search products</a>
+          </div> </br></br>
+          <div>
+            <a class="btn btn-default" href="/products/new">Register a new product</a>
+          </div></br>
+          <center><h4>Products Purchase:</h4></center>
+          <hr class="small">
+          <h3><span style="color: red;">{{cur_user.productPurchase}}</span></h3> 
+          <h4>Phone: <span style="color: blue;">{{cur_user.phone}}</span></h4>
+        </div>
     </div>
   </div>
 </div>
+
+
+
+

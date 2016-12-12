@@ -4,22 +4,32 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-heading">
           <center><h1>{{product.productName}}</h1></center>
-          <hr class="small">
-          <span class="subheading">Owner: {{product.username}}</span>
+          <!-- <span class="subheading">Owner: {{product.username}}</span> -->
         </div>
       </div>
     </div>
   </div>
 </header>
 
+
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <div style="height: 300px; width: 600px; border: 1px solid black">
-        <div style="height: 250px; width: 300px; border: 1px solid black">
-        <img src= {{product.productPhotos}}></div>
-        <h4>{{product.productPrice}} </br>
-        {{product.productDescription}}</h4>
+      <div style="height: 300px; width: 450px; ">
+        <div style="height: 150px; width: 150px; float:left; border: 1px solid black">
+        <!--<img src="img/IMG_1133.JPG" height="150" width="150" /></div> -->
+        <img class="group list-group-image" src="img/IMG_1133.JPG" alt="" /></div>
+
+        <div style="height: 250px; float: right; padding-left: 20px; width:290px; background-color:#D0D0D0">
+          <h4>{{product.productPrice}} </br> </br> {{product.productDescription}}</h4> </br> </br>
+
+            <form name="products" action="/products" method="post"> 
+              <button type="submit" class="btn btn-primary">Buy Now</button>
+            </form> </br>
+             
+          <a class="btn btn-default" href="/"> Bid  </a></br>
+          <a href="/reviews">Reviews</a>
+        </div>
       </div>
     </div>
   </div>

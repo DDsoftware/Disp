@@ -42,6 +42,37 @@ module.exports = (sequelize) => {
         notEmpty: true,
       },
     },
+    phone: {
+      type: Sequelize.STRING,
+      allowNull: true,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    producPurchase: {
+      type: Sequelize.STRING,
+      allowNull: true,
+      defaultValue: null,
+      validate: {
+        notEmpty: false,
+      },
+    },
+    balance: {
+      type: Sequelize.DOUBLE,
+      allowNull: true,
+      defaultValue: 0,
+      validate: {
+        notEmpty: false,
+      },
+    },
+    cardNumber: {
+      type: Sequelize.INTEGER,
+      allowNull: true,
+      defaultValue: 1234567890,
+      validate: {
+        notEmpty: false,
+      },
+    },
   });
 
   User.beforeCreate((user) =>

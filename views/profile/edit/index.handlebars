@@ -1,0 +1,51 @@
+<div style="width: 40%; float: left; margin-left: 250px; background-color:#D3D3D3">
+    <center>
+    <form class="col s6" name="edit-profile" action="/profile/edit" method="POST">
+        <p id="formHeading"><h4>Account information</h4></p>
+        <div class="row col s6">
+            <div class="form-group">
+              <label for="inputFirstName">First Name</label>
+              <input id="first_name"  value={{cur_user.firstName}} type="text" class="validate">
+          </div>
+          <div class="form-group">
+              <label for="inputLastName">Last Name</label>
+              <input id="last_name" value={{cur_user.lastName}} type="text" class="validate">
+          </div>
+          <div class="form-group">
+              <label for="inputUsername">Username</label>
+              <input id="username"  value={{cur_user.username}} type="text" class="validate">
+          </div>
+          <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input id="email"  value={{cur_user.email}} type="text" class="validate">
+          </div>  
+          <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input id="password"  placeholder="password" type="text" class="validate">
+          </div>
+          <div class="form-group">
+              <label for="inputphone">Phone</label>
+              <input id="phone" value={{cur_user.phone}} type="text" class="validate">
+          </div>
+
+          <h4>Add Fund</h4>
+
+          <div class="form-group">
+              <label for="inputbalance">Balance</label>
+              <input id="balance" placeholder={{cur_user.balance}} type="text" class="validate">
+          </div> 
+          <div class="form-group">
+              <label for="inputcardNumber">Your Card Number</label>
+              <input id="cardNumber" placeholder={{cur_user.cardNumber}} type="text" class="validate">
+          </div> 
+        </div>
+        <a class="btn" href="/profile/">Go Back</a>
+        <button class="btn " type="submit">Save Changes</button>
+    
+    </form>
+    </center>
+</div>
+
+
+
+

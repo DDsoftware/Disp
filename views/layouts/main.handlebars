@@ -5,6 +5,15 @@
   <title>DISP</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://getbootstrap.com/examples/sticky-footer-navbar/sticky-footer-navbar.css">
+  <style type="text/css">
+.box {
+    display: inline-block; 
+    height:100;
+    width:300px; 
+    border:1px solid; 
+    vertical-align:top
+}
+</style>
 </head>
 <body>
   <nav class="navbar navbar-default">
@@ -25,7 +34,7 @@
         <ul class="nav navbar-nav navbar-right">
           {{#if cur_user}}
           <li><a href="/products">Products</a></li>
-          <li><a href="http://localhost:3000/profile">{{cur_user.username}}</a></li>
+          <li><a href="/profile">{{cur_user.username}}</a></li>
           <li id="logout"><a href="#">Logout</a></li>
           {{else}}
           <li><a href="/sign-up">Sign Up</a></li>

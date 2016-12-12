@@ -20,9 +20,10 @@ module.exports = {
       username: req.body.inputUsername,
       email: req.body.inputEmail,
       password: req.body.inputPassword,
+      phone: req.body.inputphone,
     }).then((user) => {
       req.login(user, () =>
-        res.redirect('/')
+        res.redirect('/profile')
       );
     }).catch(() => {
       res.render('sign-up');

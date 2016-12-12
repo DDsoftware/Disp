@@ -20,15 +20,18 @@
         </div> 
         {{/if}} </br></br>
         {{#each product}}
-          <div class="post-preview">
-            <div style="height: 150px; width: 200px; border: 1px solid black"></div>
+          <div style="height: 200px; width: 450px; ">
+            <div style="height: 150px; width: 150px; float:left; border: 1px solid black"></div>
+
+            <div style="height: 100px; width:290px; float: right; padding-left: 20px; background-color:#D3D3D3">
               <a href="/products/{{this.username}}/{{this.slug}}">
-                  <h2 class="post-title">
+                  <h4 class="post-title">
                       {{this.productName}} </br>
                       {{this.productPrice}}
-                  </h2>
+                  </h4>
               </a>
               <p class="post-meta">Owner: <a href="/users/{{this.username}}">{{this.username}}</a></p>
+            </div>
           </div>
           <hr>
         {{/each}}

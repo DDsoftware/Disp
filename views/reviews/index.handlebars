@@ -1,0 +1,36 @@
+<header class="intro-header" >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <center><h1>reviews</h1></center>
+          <hr class="small">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+       
+        <div class="create-review">
+          <a class="btn btn-default" href="/reviews/new">Create review</a>
+        </div>
+        
+        {{#each review}}
+          <div class="review-preview">
+              <a href="/reviews/{{this.username}}/{{this.slug}}">
+                  <h2 class="review-title">
+                      {{this.title}}
+                  </h2>
+              </a>
+              <p class="review-meta">reviewed by <a href="/users/{{this.username}}">{{this.username}}</a></p>
+          </div>
+          <a class="btn" href="/profile/">Go Back</a>
+          <hr>
+        {{/each}}
+      </div>
+  </div>
+</div>

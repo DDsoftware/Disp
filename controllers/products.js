@@ -11,22 +11,9 @@ module.exports = {
     router.get('/', this.index);
     router.get('/new', Redirect.ifNotLoggedIn('/login'), this.new);
     router.post('/', Redirect.ifNotLoggedIn('/login'), this.create);
+    router.post('/:username/single', Redirect.ifNotLoggedIn('/login'), this.submit);
     router.get('/:username/:slug', this.show);
-    router.get('/:username/:slug/edit',
-                Redirect.ifNotLoggedIn('/login'),
-                Redirect.ifNotAuthorized('/products'),
-                this.edit
-              );
-    router.put('/:username/:slug',
-                Redirect.ifNotLoggedIn('/login'),
-                Redirect.ifNotAuthorized('/products'),
-                this.update
-              );
-    router.delete('/:username/:slug',
-                   Redirect.ifNotLoggedIn('/login'),
-                   Redirect.ifNotAuthorized('/products'),
-                   this.delete
-                  );
+    
 
     return router;
   },
@@ -49,7 +36,7 @@ module.exports = {
       productPhotos: req.body.productPhotos,
       
     }).then((product) => {
-      res.redirect(`/products/${product.username}/${product.productName}`);
+      res.redirect(`/products/${product.productName}`);
     }).catch(() => {
       res.render('products/new');
     });
@@ -64,40 +51,19 @@ module.exports = {
       (product ? res.render('products/single', { product }) : res.redirect('/products'))
     );
   },
-  edit(req, res) {
-    models.Product.findOne({
-      where: {
-        username: req.params.username,
-        slug: req.params.slug,
-      },
-    }).then((product) =>
-      (product ? res.render('products/edit', { product }) : res.redirect('/products'))
-    );
-  },
-  update(req, res) {
-    models.Product.update({
-      productName: req.body.productName,
-      slug: getSlug(req.body.productName),
-      productPrice: req.body.productPrice,
-      productDescription: req.body.productDescription,
-      productPhotos: req.body.productPhotos,
+ 
+  submit(req, res) {
+    models.User.update({
+      producPurchase: req.product.productName,
+      //balance: (req.user.balance - req.product.productPrice),
     }, {
       where: {
-        username: req.params.username,
-        slug: req.params.slug,
-      },
-    }).then((product) => {
-      res.redirect(`/products/${product.username}/${product.productName}`);
-    });
-  },
-  delete(req, res) {
-    models.Product.destroy({
-      where: {
-        username: req.params.username,
-        slug: req.params.slug,
-      },
-    }).then(() => {
-      res.redirect('/products');
+        username: req.user.username
+      }
+  }).then(() => {
+        res.redirect('/profile')
+    }).catch((err) => {
+       console.log(err);
     });
   },
 };

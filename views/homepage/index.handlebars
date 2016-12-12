@@ -2,30 +2,29 @@
   <div class="row">
     <div class="col-sm-12">
       {{#if cur_user}}
-        <center><h1>Hey <span style="color: red;">{{cur_user.username}}</span></h1></center> </br></br>
-        <div style="float:left; padding-left: 20px; width: 40%; background-color:#D3D3D3">
-          <center><h2>Profile Information</h2></center>
-          <hr class="small">
-          <h3>Username: <span style="color: red;">{{cur_user.username}}</span></h3>
-          <h3>FirstName: <span style="color: red;">{{cur_user.firstName}}</span></h3>
-          <h3>LastName: <span style="color: red;">{{cur_user.lastName}}</span></h3>
-          <h3>Email: <span style="color: blue;">{{cur_user.email}}</span></h3> </br></br>
-          <center><button type="submit" class="btn btn-primary">Edit user</button></center>
-        </div>
-        <div>
-          <a class="btn btn-default" href="/products">Search products</a>
-        </div>
-
-        <div>
-          <a class="btn btn-default" href="/products/new">Register a new product</a>
-        </div>
-
+        
       {{else}}
         <div>
           <center><h1>Welcome</h1></center>
 
           <a class="btn btn-default" href="/products">Search products</a>
         </div> </br>
+        {{#each product}}
+          <div style="height: 200px; width: 450px; ">
+            <div style="height: 150px; width: 150px; float:left; border: 1px solid black">
+            <img src= {{product.productPhotos}}></div>
+            <div style="height: 100px; width:290px; float: right; padding-left: 20px; background-color:#D3D3D3">
+              <a href="/products/{{this.username}}/{{this.slug}}">
+                  <h4 class="post-title">
+                      {{this.productName}} </br>
+                      {{this.productPrice}}
+                  </h4>
+              </a>
+              <p class="post-meta">Owner: <a href="/users/{{this.username}}">{{this.username}}</a></p>
+            </div>
+          </div>
+          <hr>
+        {{/each}}
        
       {{/if}}
     </div>
