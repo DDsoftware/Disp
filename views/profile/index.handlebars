@@ -1,41 +1,139 @@
+<!--{{#each success}}
+  <div class="alert alert-danger">{{this}}</div>
+{{/each}}
+
+<header class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>{{user.username}}</h1>
+          <hr class="small">
+          <span class="subheading">{{user.firstName}} {{user.lastName}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-        <center><h4>Recommended for: <span style="color: red;">{{cur_user.username}}</span></h4></center> 
-        <div style="float:left; padding-left: 20px; width: 25%; background-color:#D3D3D3">
-          <center><h2>Profile Information</h2></center>
-          <hr class="small">
-          <h4>Username: <span style="color: red;">{{cur_user.username}}</span></h4>
-          <h4>FirstName: <span style="color: blue;">{{cur_user.firstName}}</span></h4>
-          <h4>LastName: <span style="color: blue;">{{cur_user.lastName}}</span></h4>
-          <h5>Email: <span style="color: blue;">{{cur_user.email}}</span></h5> 
-          <h4>Phone: <span style="color: blue;">{{cur_user.phone}}</span></h4> </br>
-          <center><h2>Account Info:</h2></center>
-          <h4>Acc#: <span style="color: blue;">{{cur_user.cardNumber}}</span></h4> 
-          <h4>Balance: <span style="color: blue;">{{cur_user.balance}}</span></h4> </br>
-          
-          <center><a class="btn" style="color: green;" href="/profile/edit">Edit Profile</a></center>
-        </div>
-          {{cur_product.productName}}
-
-        <div style="float:right; padding-left: 20px; width: 25%; background-color:#D3D3D3">
-          </br>
-          <div>
-            <a class="btn btn-default" href="/products">Search products</a>
-          </div> </br></br>
-          <div>
-            <a class="btn btn-default" href="/products/new">Register a new product</a>
-          </div></br>
-          <center><h4>Products Purchase:</h4></center>
-          <hr class="small">
-          <h3><span style="color: red;">{{cur_user.productPurchase}}</span></h3> 
-          <h4>Phone: <span style="color: blue;">{{cur_user.phone}}</span></h4>
-        </div>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <p></p>
     </div>
   </div>
-</div>
+</div>-->
+
+<!--<center> <h1>Update {{cur_user.username}} Profile</h1></center>
+  <center> <form action="/send_update_profile/" method="POST" > 
+
+<div style="background-image: url(http://fc03.deviantart.net/fs71/i/2012/351/2/4/cloudy_sky_background_by_goblinengineer-d5obh26.png)"
+<br/>
+          Username:<br/>
+ <input type="text" name="firstname" id="firstname" value={{cur_user.username}} >
+<br/>
+           Email:<br/>
+ <input type="text" name="email" id="email" value={{ cur_user.email }} >
+<br/>
+           Password:<br/>
+ <input type="text" name="password" id="password" value={{ cur_user.password }} >
+<br/>
+     Zip:<br/>
+ <input type="text" name="password" id="password" value= {{cur_user.firstName}} >
+<br/>
+
+<br/>Condition:
+<br/>
+ <input type="textarea" name="password" id="password" value={{cur_user.lastName}} >
+<br/>
+Favorite drink<br/>
+ <input type="text" name="password" id="password" value="Coke" >
+<br/>
+<br/>
+<br/>
+<a class='btn' href="{% url 'profile' cur_user.username %}">Account<a>
+
+-->
+	 <!--<button type="submit">Submit</button>-->
+ </form>
+  </center>
+<!--<h1> <center> Hey  {{cur_user.username}} </center></h1>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Cookbook profile page</title>
+    <!-- =============== VENDOR STYLES ===============-->
+
+<!-- =============== APP STYLES ===============-->
+<link rel="stylesheet" href="css/app.css" id="maincss">
+</head>
+
+<div class="content-wrapper">
+    <div class="unwrap">
+        <!--<div style="background-image: url(http://fc03.deviantart.net/fs71/i/2012/351/2/4/cloudy_sky_background_by_goblinengineer-d5obh26.png)"-->
+             <!--class="bg-cover">-->
+            <div class="p-xl text-center text-white">
+
+                <img src="http://www.free-icons-download.net/images/user-icon-44709.png"
+                     alt="Image" class="img-thumbnail img-circle thumb128" style="height: 10%; width: 10%;">
+
+                <h5 class="m0">{{cur_user.firstName}}</h5>
+
+                <h5 class="m0">{{cur_user.lastName}}</h5>
+
+                <h5 class="m0">{{cur_user.email}}</h5>
+
+
+                <br>
+                
+            </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="text-center">
+                        <h3 class="mt0">{{cur_user.username}}</h3>
+                        <h5>{{cur_user.email}}</h5>
+                            <br>
+
+                        <a href="/updateprofile" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit Profile</a>
+                        <br>
+                        <br>
+                        
+                    </div>
+                    <hr>
+
+                    <ul class="list-unstyled ph-x1">
+                        <li>
+                            <em class="fa fa-home fa-fw mr-lg"></em>Somewhere, Neverland
+                        </li>
+                        <li>
+                            <em class="fa fa-briefcase fa-fw mr-lg"></em>Exxon Mobile
+                        </li>
+                        <li>
+                            <em class="fa fa-graduation-cap fa-fw mr-lg"></em>Master Designer
+                        </li>
+                        <li>
+                            <em class="fa fa-truck fa-fw mr-lg"></em>10033
+                        </li>
+                        <li>
+                            <em class="fa fa-graduation-cap fa-fw mr-lg"></em>Tourism
+                        </li>
 
 
 
+                    </ul>
+                </div>
+            </div>
 
+
+        </div>
+
+
+        </body>
+
+        </html>

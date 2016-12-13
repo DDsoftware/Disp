@@ -36,7 +36,7 @@ module.exports = {
       productPhotos: req.body.productPhotos,
       
     }).then((product) => {
-      res.redirect(`/products/${product.productName}`);
+      res.redirect(`/products/${product.username}/${product.productName}`);
     }).catch(() => {
       res.render('products/new');
     });

@@ -2,29 +2,61 @@
   <div class="row">
     <div class="col-sm-12">
       {{#if cur_user}}
-        
-      {{else}}
+        <center><h1>Hey <span style="color: red;">{{cur_user.username}}</span></h1></center> </br></br>
+        <div style="float:left; padding-left: 20px; width: 40%; background-color:#D3D3D3">
+          <center><h2>Profile Information</h2></center>
+          <hr class="small">
+          <h3>Username: <span style="color: red;">{{cur_user.username}}</span></h3>
+          <h3>FirstName: <span style="color: red;">{{cur_user.firstName}}</span></h3>
+          <h3>LastName: <span style="color: red;">{{cur_user.lastName}}</span></h3>
+          <h3>Email: <span style="color: blue;">{{cur_user.email}}</span></h3> </br></br>
+          <center><button type="submit" class="btn btn-primary">Edit user</button></center>
+        </div>
         <div>
-          <center><h1>Welcome</h1></center>
-
           <a class="btn btn-default" href="/products">Search products</a>
-        </div> </br>
-        {{#each product}}
-          <div style="height: 200px; width: 450px; ">
-            <div style="height: 150px; width: 150px; float:left; border: 1px solid black">
-            <img src= {{product.productPhotos}}></div>
-            <div style="height: 100px; width:290px; float: right; padding-left: 20px; background-color:#D3D3D3">
-              <a href="/products/{{this.username}}/{{this.slug}}">
-                  <h4 class="post-title">
-                      {{this.productName}} </br>
-                      {{this.productPrice}}
-                  </h4>
-              </a>
-              <p class="post-meta">Owner: <a href="/users/{{this.username}}">{{this.username}}</a></p>
+        </div>
+
+        <div>
+          <a class="btn btn-default" href="/products/new">Register a new product</a>
+        </div>
+
+      {{else}}
+        <div style = "padding: 20px; width: 100%; background-color: #D3D3D3">
+          <center><h1>Welcome</h1></center>
+          <center><p>Welcome to Disp! Disp is an online sales platform <br> designed to make it easy for you to sell your goods. <br> Browse our current listings and please sign up <br> if you'd like to sell something of your own.</p></center>
+
+          <center> <a class="btn btn-default" href="/products">Search products</a> </center>
+
+  <br>
+  <center>
+  <div id="carousel" class="carousel" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1" class="active"></li>
+                <li data-target="#carousel" data-slide-to="2" class="active"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="http://techattitude.com/wp-content/uploads/2012/11/iphone-5-launched-in-India-on-November-2.jpg" alt="Slide 1">
+                </div>
+                <div class="item">
+                    <img src="http://media.istockphoto.com/photos/white-tshirt-picture-id475886283?k=6&m=475886283&s=170667a&w=0&h=b2gJkrQhDZsh94_YP2ApFzDTP5iILT02DrTwikeJWhQ=" alt="Slide 2">
+                </div>
+                <div class="item">
+                    <img src="https://thumb1.shutterstock.com/display_pic_with_logo/1271989/125281493/stock-photo-thermos-on-the-white-background-125281493.jpg" alt="Slide 3">
+                </div>
             </div>
-          </div>
-          <hr>
-        {{/each}}
+            <a href="#carousel" class="left carousel-control" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a href="#carousel" class="right carousel-control" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+</div> 
+
+</center>
+    <br>
        
       {{/if}}
     </div>

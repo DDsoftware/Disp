@@ -1,0 +1,40 @@
+
+<center> <h1>Update {{cur_user.username}} Profile</h1></center>
+<!--<center> ///<form action="/send_update_profile/" method="POST" >-->
+<center>
+    <!--<div  style="background-image: url(http://fc03.deviantart.net/fs71/i/2012/351/2/4/cloudy_sky_background_by_goblinengineer-d5obh26.png)"-->
+    <br/>
+    Username:<br/>
+    <input type="text" name="username" id="username" value={{cur_user.username}} >
+    <br/>
+    Email:<br/>
+    <input type="text" name="email" id="email" value={{ cur_user.email }} >
+    <br/>
+    Password:<br/>
+    <input type="text" name="password" id="password" value={{ cur_user.password }} >
+    <br/>
+    First Name:<br/>
+    <input type="text" name="firstname" id="firstname" value= {{cur_user.firstName}} >
+    <br/>Last Name:
+    <br/>
+    <input type="textarea" name="lastname" id="lastname" value={{cur_user.lastName}} >
+    <br/>
+
+    <br/>
+
+
+    <form action="/pictures/upload" method="POST" enctype="multipart/form-data">
+        Select an image to upload:
+        <input type="file" name="image">
+
+    </form>
+
+    <br/>
+    <br/>
+    <a href="/" type="submit" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Submit</a>
+
+    <?php
+     $db = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=79831411802");
+     $query = "INSERT INTO cur_user VALUES ('$_POST[cur_user.username]','$_POST[cur_user.email]', '$_POST[cur_user.password]','$_POST[cur_user.firstname]','$_POST[cur_user.lastname]')";
+     $result = pg_query($query);
+     ?>

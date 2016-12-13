@@ -1,0 +1,120 @@
+<!--<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      {{#if cur_user}}
+        <center><h1>Hey <span style="color: red;">{{cur_user.username}}</span></h1></center> </br></br>
+        <div style="float:left; padding-left: 20px; width: 40%; background-color:#D3D3D3">
+          <center><h2>Profile Information</h2></center>
+          <hr class="small">
+          <h3>Username: <span style="color: red;">{{cur_user.username}}</span></h3>
+          <h3>FirstName: <span style="color: red;">{{cur_user.firstName}}</span></h3>
+          <h3>LastName: <span style="color: red;">{{cur_user.lastName}}</span></h3>
+          <h3>Email: <span style="color: blue;">{{cur_user.email}}</span></h3> </br></br>
+          <center><button type="submit" class="btn btn-primary">Edit user</button></center>
+        </div>
+        <div>
+          <a class="btn btn-default" href="/products">Search products</a>
+        </div>
+
+        <div>
+          <a class="btn btn-default" href="/products/new">Register a new product</a>
+        </div>
+
+      {{else}}
+        <div>
+          <center><h1>Welcome</h1></center>
+
+          <a class="btn btn-default" href="/products">Search products</a>
+        </div> </br>
+
+      {{/if}}
+    </div>
+  </div>-->
+
+    <div class="row">
+        <div class="col-md-3">
+
+
+            </br></br>
+                <div style="float:left; padding-left: 20px; width: 100%; background-color:#D3D3D3">
+                    <h4>Profile Information</h4>
+                    <hr class="small">
+                    <h6>Username: <span style="color: red;">{{cur_user.username}}</span></h6>
+                    <h6>FirstName: <span style="color: red;">{{cur_user.firstName}}</span></h6>
+                    <h6>LastName: <span style="color: red;">{{cur_user.lastName}}</span></h6>
+                    <h6>Email: <span style="color: blue;">{{cur_user.email}}</span></h6> </br></br>
+
+
+                    <h4>Account Information</h4>
+                    <hr class="small">
+                    <h7>Account: <span style="color: red;">{{cur_user.username}}</span></h7></br>
+                    <h7>Balance: <span style="color: red;">1000</span></h7>
+                    </br>
+                    </br></br>
+                    <a href="/profile" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit Profile</a>
+                    </br></br>
+                    </br>
+                </div>
+
+
+
+
+
+
+        </div>
+
+        <div class="col-md-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        {{#if cur_user}}
+                            <h1>Hey <span style="color: red;">{{cur_user.username}}</span>
+
+                        {{/if}} </br></br>
+
+                        {{#each product}}
+                            <div class="post-preview">
+                                <div style="height: 150px; width: 200px; border: 1px solid black"></div>
+                                 <a href="/products/{{this.username}}/{{this.slug}}">
+                                    <h2 class="post-title">
+                                        {{this.productName}} </br>
+                                        {{this.productPrice}}
+                                    </h2>
+                                </a>
+                                <p class="post-meta">Owner: <a href="/users/{{this.username}}">{{this.username}}</a></p>
+                            </div>
+                            <hr>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <br>
+            <br>
+
+
+
+            <div style="float:left; padding-left: 20px; width: 100%; background-color:#D3D3D3">
+                <center><h4>Actions</h4></center>
+                <hr class="small">
+                <center><a href="/products" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Browse Listings</a></center>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <center><a href="/products/new" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register a Product</a></center>
+                <br>
+                <br>
+                <br>
+                <br>
+                <center><a href="/updateprofile" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">My purchases</a></center>
+                </br></br>
+                </br>
+            </div>
+
+
+
+        </div>
+    </div>
